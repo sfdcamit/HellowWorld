@@ -9,6 +9,7 @@
         <name>ApexPage</name>
     </types> -->
     <types>
+        <members>Payment__c</members>
         <members>Jenkins_Test__c</members>
         <name>CustomObject</name>
     </types>
