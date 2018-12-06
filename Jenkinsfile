@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                withAnt(installation: 'LOCALANT') {
+                withAnt(installation: 'ANT_HOME') {
                     //for windows 
                    bat "ant retrieve"
                     bat "ant deploy"
