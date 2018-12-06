@@ -6,6 +6,7 @@ pipeline {
                 withAnt(installation: 'ANT_HOME') {
                     //for windows 
                    bat "ant retrieve"
+                    bat "ant deploy"
                 }
                 echo "This is build Stage"
             }
