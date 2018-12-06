@@ -3,6 +3,10 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
+                withAnt(installation: 'ANT_HOME') {
+                    //for windows 
+                   bat "ant retrieve"
+                }
                 echo "This is build Stage"
             }
         }
