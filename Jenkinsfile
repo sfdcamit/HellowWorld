@@ -1,7 +1,7 @@
 pipeline {
     agent any 
     stages {
-        stage('Build') { 
+        stage('Build & Deploy') { 
             steps {
                 withAnt(installation: 'ANT_HOME') {
                     //for windows 
@@ -11,12 +11,12 @@ pipeline {
                 echo "This is build Stage"
             }
         }
-        stage('Test') { 
+        stage('Compile') { 
             steps {
                 input('do you want to proceed?')
             }
         }
-        stage('Stage Four'){
+        stage('Testing Stage'){
             parallel{
                 stage('unit test'){
                     steps{
@@ -30,9 +30,9 @@ pipeline {
                 }
             }
         }
-        stage('Deploy') { 
+        stage('Commit to Feature Branch') { 
             steps {
-                echo "This is Deploy Stage" 
+                echo "Commiting to Feature Branch...." 
             }
         }
     }
