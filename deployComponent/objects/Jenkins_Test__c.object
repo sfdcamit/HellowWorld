@@ -66,6 +66,18 @@
         <type>Lookup</type>
     </fields>
     <fields>
+        <fullName>Bugs__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Bugss</label>
+        <referenceTo>Case</referenceTo>
+        <relationshipLabel>Jenkins Testss</relationshipLabel>
+        <relationshipName>Jenkins_Testss</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
         <fullName>Developer_Email__c</fullName>
         <externalId>false</externalId>
         <label>Developer Email</label>
