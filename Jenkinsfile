@@ -1,44 +1,39 @@
 pipeline {
-    agent any
+    agent any 
     stages {
-        stage('One') {
-                steps {
-                        echo 'Hi, this is Zulaikha from edureka'
-			
+        stage('Build') { 
+            steps {
+                withAnt(installation: 'ANT_HOME') {
+                    //for windows 
+                    bat "ant retrieve"
+                    bat "ant deploy"
                 }
+                echo "This is build Stage"
+            }
         }
-	    stage('Two'){
-		    
-		steps {
-			input('Do you want to proceed?')
+        stage('Test') { 
+            steps {
+                input('do you want to proceed?')
+            }
         }
-	    }
-        stage('Three') {
-                when {
-                        not {
-                                branch "master"
-                        }
+        stage('Stage Four'){
+            parallel{
+                stage('unit test'){
+                    steps{
+                        echo "unit tes is running"
+                    }
                 }
-                steps {
-			echo "Hello"
-                        }
+                stage('Integration Test'){
+                    steps{
+                        echo "Integration Test is running"
+                    }
+                }
+            }
         }
-        stage('Four') {
-                parallel {
-                        stage('Unit Test') {
-                                steps{
-                                        echo "Running the unit test..."
-                                }
-                        }
-                        stage('Integration test') {
-                        
-			            }
-				steps {
-					echo 'Running the integration test..'
-				}
-                               
-			}  
-         }
+        stage('Deploy') { 
+            steps {
+                echo "This is Deploy Stage" 
+            }
         }
     }
 }
