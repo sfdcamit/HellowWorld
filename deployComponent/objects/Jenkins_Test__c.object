@@ -83,6 +83,16 @@
         <type>Checkbox</type>
     </fields>
     <fields>
+        <fullName>Location__c</fullName>
+        <displayLocationInDecimal>false</displayLocationInDecimal>
+        <externalId>false</externalId>
+        <label>Location</label>
+        <required>false</required>
+        <scale>4</scale>
+        <trackTrending>false</trackTrending>
+        <type>Location</type>
+    </fields>
+    <fields>
         <fullName>PipeLineTest__c</fullName>
         <externalId>false</externalId>
         <label>PipeLineTest</label>
@@ -104,6 +114,14 @@
         <trackTrending>false</trackTrending>
         <type>MasterDetail</type>
         <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Working__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Working</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
     </fields>
     <label>Jenkins Test</label>
     <nameField>
