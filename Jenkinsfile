@@ -10,7 +10,7 @@ pipeline {
                     bat "cd deployComponent"
                     bat "git init"
                     bat "git add ."
-                    bat "git commit -m 'this is test commit'"
+                    bat "git commit -m \"this is test commit\""
                 }
                 echo "This is build Stage"
             }
